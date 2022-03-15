@@ -1,0 +1,39 @@
+[
+ {
+  "id": 1,
+  "name": "Lucas Galletti",
+  "user": "lgalletti",
+  "mail": "lucas.galletti@gmail.com",
+  "born": "1978-08-30",
+  "address": "",
+  "Ciencia Ficción": "Ciencia Ficción",
+  "Investigación": "Investigación",
+  "pass": "$2a$10$EFYcJwKp1dA5r75S5P9Kw.vub8Xmi8GFCCouKxMut.hnqt5pCpQRm",
+  "image": "registerImg-1638657683342.jpg"
+ },
+ {
+  "id": 2,
+  "name": "Cami Tombar",
+  "user": "ctombar",
+  "mail": "ctombar@gmail.com",
+  "born": "",
+  "address": "",
+  "Investigación": "Investigación",
+  "Universitarios": "Universitarios",
+  "pass": "$2a$10$3weMlTnGi4uujJe87jchLu2d81Dal7ccOYq.lbraP2dUbE7VGTQLa",
+  "image": "registerImg-1638991556422.jpg"
+ },
+ {
+  "id": 3,
+  "name": "Santi Sosa",
+  "user": "ssosa",
+  "mail": "ssosa@gmail.com",
+  "born": "",
+  "address": "",
+  "Ciencia Ficción": "Ciencia Ficción",
+  "Aventuras": "Aventuras",
+  "Libería": "Libería",
+  "pass": "$2a$10$lbDRViX1/ZrtUrkk/4PJ2eaH0h9NHoD6r6c9dKuKUL91FWLdh8Hy6",
+  "image": "registerImg-1638991582873.jpg"
+ }
+]
