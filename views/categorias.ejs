@@ -1,0 +1,46 @@
+
+<%- include('./partials/head', {title: 'ABM Categorías'}) %>
+
+
+<%- include('./partials/headerNavbar') %>
+
+
+<div class="addButton">
+  <a href="/categorys/create">
+    <img src="/images/addCategory.png" alt="addCategory" >
+  </a>
+</div>
+
+<form class="d-flex buscarProducto" id=form action="/categorys/search">
+  <input class="form-control me-2" id=categoria name="search" type="search" placeholder="Buscar categoría" aria-label="Search">
+  <button class="btn btn-outline-success" type="submit">Buscar</button>
+</form>
+
+<div class = "erroresFront">
+  <ul>
+      
+  </ul>
+</div>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Categoría</th>
+        <th scope="col" class="abmCentrado">Editar</th>
+        <th scope="col" class="abmCentrado">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody class="abmTableRest">
+        <% categorias.forEach((categoria) => { %>
+      <tr>
+        <td><%=categoria.name.toUpperCase()%></td>
+        <td class="abmCentrado"><a href="/categorys/edit/<%=categoria.id%>"><i class="fas fa-edit"></i></a></td>
+        <td class="abmCentrado"><a href="/categorys/delete/<%=categoria.id%>"><i class="fas fa-trash-alt" style="color: red;"></i></a></td>
+      </tr>
+      <% }) %> 
+    </tbody>
+  </table>
+  <input type="button" class="botonCancelar" onclick="history.back()" name="volver atrás" value="volver" style="margin-top: 15px; margin-bottom: 25px;">
+  <%- include('./partials/footer') %>
+
+  <script src="/js/categorias.js"> </script>

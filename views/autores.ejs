@@ -1,0 +1,48 @@
+
+<%- include('./partials/head', {title: 'ABM Autores'}) %>
+
+
+<%- include('./partials/headerNavbar') %>
+
+
+<div class="addButton">
+  <a href="/authors/create">
+    <img src="/images/addAuthor.png" alt="addAuthor" >
+  </a>
+</div>
+
+<form class="d-flex buscarProducto" id=form action="/authors/search" method="GET">
+  <input class="form-control me-2" id="buscar" name="search" type="search" placeholder="Buscar autores" aria-label="Search">
+  <button class="btn btn-outline-success" type="submit">Buscar</button>
+</form>
+
+<div class = "erroresFront">
+  <ul>
+      
+  </ul>
+</div>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col" class="abmCentrado">Editar</th>
+        <th scope="col" class="abmCentrado">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody class="abmTableRest">
+        <% autores.forEach((autor) => { %>
+      <tr>
+        <td><%=autor.name.toUpperCase()%></td>
+        <td class="abmCentrado"><a href="/authors/edit/<%=autor.id%>"><i class="fas fa-edit"></i></a></td>
+        <td class="abmCentrado"><a href="/authors/delete/<%=autor.id%>"><i class="fas fa-trash-alt" style="color: red;"></i></a></td>
+      </tr>
+      <% }) %> 
+    </tbody>
+  </table>
+  <input type="button" class="botonCancelar" onclick="history.back()" name="volver atrás" value="volver" style="position: fixed; right: 50px; bottom: 50px;">
+
+
+  <%- include('./partials/footer') %>
+
+  <script src="/js/autores.js"> </script>

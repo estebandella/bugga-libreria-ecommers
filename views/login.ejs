@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head', {title: 'Login'}) %>
+<body>
+
+    <%- include('./partials/headerNavbar') %>
+    <section class="formulario-registro-login">
+
+        <form action="/user/login" method="POST" class="form">
+            <h3>Ingreso</h3>
+            <div class="user">
+                <input type="email" id="mail" placeholder="E-mail" name="mail" value="<%= locals.old && old.mail ? old.mail : '' %>">
+                <% if (locals.errors && errors.mail) { %>
+                    <div class="mje-error">
+                        <%= errors.mail.msg %>
+                    </div>
+                <% } %>
+            </div>
+            
+            <div class="passL">
+                <input type="password" id="pass" name="pass" placeholder="Contraseña" value="<%= locals.old && old.pass ? old.pass : '' %>">
+                    <% if (locals.errors && errors.pass) { %>
+                        <div class="mje-error">
+                            <%= errors.pass.msg %>
+                        </div>
+                    <% } 
+                    %> 
+            </div> 
+            <div class="remember">
+                <input type="checkbox" name="recordar"><label for="recordar">Recordar</label>
+            </div>   
+
+
+            <div class = "erroresFront">
+                <ul>
+                    
+                </ul>
+            </div>
+
+            <button type="submit" id="button" style="cursor: pointer;">Enviar</button>
+
+
+
+        </form>
+
+
+    </section>
+
+    <%- include('./partials/footer') %>
+
+        <script src="/js/login.js"> </script>
+    </body>
+</html>

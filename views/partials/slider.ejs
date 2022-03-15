@@ -1,0 +1,118 @@
+<style>
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  /* max-width: 1000px; */
+  position: relative;
+  margin-top: 150px;
+}
+
+.slideshow-container img{
+  width: 900px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 3.5s;
+  animation-name: fade;
+  animation-duration: 3.5s;
+  }
+
+@media (min-width: 361px){
+
+    .mySlides img{
+        height: 20%;
+
+        
+    }
+}
+
+@media (min-width: 768px){
+
+.mySlides img{
+    max-height: 300px;
+
+    
+  }
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+</style>
+
+
+
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <img src="/images/trilogía_tolkien.png" style="width:100%">
+    </div>
+  
+    <div class="mySlides fade">
+      <img src="/images/trilogía_manfredi.png" style="width:100%">
+    </div>
+  
+    <div class="mySlides fade">
+      <img src="/images/trilogía_urturi.png" style="width:100%">
+    </div>
+
+  </div>
+  <br>
+  
+  <!-- <div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div> -->
+
+
+  <script>
+      var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 4000); // Change image every 2 seconds
+}
+  </script>
