@@ -1,0 +1,95 @@
+<%- include('./partials/head', {title: 'Resúmen de Compra'}) %>
+
+
+<%- include('./partials/headerNavbar') %>
+
+<main>
+    <table class="table table-hover detalle-compra">
+    
+        <thead>
+          <tr style="background-color: #735290; height: 30px; color: white;">
+            <th scope="col" colspan="3">Detalle</th>
+            <th scope="col" class="abmCentrado resumen">Precio</th>
+            <th scope="col" class="abmCentrado">Cantidad</th>
+            <th scope="col" class="abmCentrado resumen">Subtotal</th>
+            <th scope="col" class="abmCentrado">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody class="abmTableProducts">
+            <% carrito.forEach(item => { %> 
+          <tr>
+            <td> <a href="/products/<%= item.id_name %> "><img src="/images/<%= item.productos.image %> " alt="book-image" style="max-width: 100px; padding: 5px; margin-left: 5px; text-align: left;"></a>
+                <p class="oculto">$ <%=item.total_purchase%></p>
+            </td>
+
+                
+
+            <div>
+                <td colspan="2"><%=item.productos.title%>
+                <br>
+                <%= item.autores.name %>
+                </td>
+            </div>
+            <td class="abmCentrado resumen" >$ <%=item.total_purchase%></td>
+            <td class="abmCentrado"><%= item.qty %></td>
+            <td class="abmCentrado resumen">$ <%=item.total_purchase * item.qty%></td>
+            <form action="/shop/borrarElementoCarrito" method="POST" class="mt-4">
+                <input type="hidden" name="itemId" value="<%= item.id %>">
+            <td class=""><button type="submit" name="Borrar" class="btn btn-danger " style="border: none; background-color: rgba(255, 255, 191, 0)"><i class="fas fa-trash-alt" style="color: red; font-size: 15px;"></i></button></td>
+             </form>         
+        </tr>
+          <% }) %> 
+        </tbody>
+      </table>
+
+
+    <div class="opciones-carrito">
+        <a href="/products"><button>Seguir<br> Comprando</button></a>
+
+        <form action="/shop/deleteAll?_method=delete" method="POST">
+            <button type="submit">Vaciar <br>Carrito</button>
+        </form>
+    </div>
+
+
+    <!-- <div class="resto-compra">
+        <form action="" method="post" class="cupon">
+            <p>Descuento</p>
+            <input type="text" placeholder="Cupón">
+            <br>
+            <button>Aplicar</button>
+        </form>
+ 
+        <form action="" method="post" class="envio">
+            <p>Calcular Envío</p>
+                <br>
+                <select name="pais" id="pais">
+                    <option value="0">Elija País</option>
+                    <option value="1">Argentina</option>
+                    <option value="2">Uruguay</option>
+                    <option value="3">Chile</option>
+                    <option value="4">Brasil</option>
+                </select>
+                <br>
+                <input type="text" placeholder="Código Postal">
+                <br>
+                <button>Calcular</button>
+        </form>
+     -->
+     <!-- <div class="resto-compra" style="margin: 30px auto;">
+        <div class="total">
+            <h3>Detalle de Compra</h3>
+            <p>Subtotal</p>
+            <p>Descuento</p>
+            <p>Cant Libros</p>
+            <p>Total</p>
+            <button>Confirmar</button>
+        </div>
+    </div> -->
+
+</main>
+
+
+
+
+<%- include('./partials/footer') %>

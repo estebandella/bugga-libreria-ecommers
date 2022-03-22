@@ -1,0 +1,27 @@
+<%- include('./partials/head', {title: 'Registro'}) %>
+
+    <%- include('./partials/headerNavbar') %>
+
+    <section class="profile">
+        <div class="name">
+        <h2>
+            <%= user.name %> 
+
+        </h2>
+        </div>
+        <img src="/images/profileImg/<%= user.image %>" alt="user_image">
+
+        <div class="email">
+           <p><%= user.email %> </p> 
+        </div>
+
+        <div class="buttonEditUser">
+            <a href="/user/edit/<%=user.id%>"><button>Editar</button></a>
+        </div>
+
+    </section>
+    
+    
+    
+    
+    <%- include('./partials/footer') %>
