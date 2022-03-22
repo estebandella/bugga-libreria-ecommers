@@ -49,7 +49,11 @@ app.use((req,res,next)=>{
 
 
 
+<<<<<<< HEAD
 app.listen(process.env.PORT || 3010, function () { console.log('Servidor OK - Corriendo BUGGA - puerto 3010')});
+=======
+app.listen(process.env.PORT || 3010, function () { console.log('Servidor OK - bugga2 - puerto 3010')});
+>>>>>>> 7f1061b65e6a48088087866214410dac030b2e0e
 
 
 
